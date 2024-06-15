@@ -2,7 +2,7 @@
 {
     // https://github.com/devcontainers/templates/tree/main/src/ubuntu
     "name": "Ubuntu 24.04",
-    "image": "mcr.microsoft.com/devcontainers/base:noble"
+    "image": "mcr.microsoft.com/devcontainers/base:noble",
 
     // https://containers.dev/features
     "features": {
