@@ -72,11 +72,12 @@ class FileEntry(NamedTuple):
 thefiles = (  # Windows / Cygwin
     FileEntry(src='.bash_aliases', dst='~/.bashrc'),
     FileEntry(src='.gitconfig', dst='~/AppData/Local/Programs/Git/etc/gitconfig',
-              copy_filt=gitconf_copyfilt if ISWIN else nullfilt, diff_filt=gitconf_difffilt),
+              copy_filt=gitconf_copyfilt, diff_filt=gitconf_difffilt),
     FileEntry(src='.vimrc'),
+    FileEntry(src='git_mysync.py', dst='~/bin/git_mysync.py'),
 ) if ISWIN else (  # assume Linux
     FileEntry(src='.bash_aliases'),
-    FileEntry(src='.gitconfig', copy_filt=gitconf_copyfilt if ISWIN else nullfilt, diff_filt=gitconf_difffilt),
+    FileEntry(src='.gitconfig', copy_filt=nullfilt, diff_filt=gitconf_difffilt),
     FileEntry(src='.perlcriticrc'),
     FileEntry(src='.perltidyrc'),
     FileEntry(src='.vimrc'),
