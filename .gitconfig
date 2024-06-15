@@ -1,0 +1,60 @@
+# On Windows:
+# $HOME/AppData/Local/Programs/Git/etc/gitconfig
+# NOTE: if we want to push to a non-bare repo, in the target repo do:
+#   git config receive.denyCurrentBranch updateInstead
+[user]
+	name = Hauke D
+	email = haukex@zero-g.net
+[color]
+	ui = auto
+[color "diff"]
+	commit = yellow reverse
+[alias]
+	wdiff = diff --color-words
+	unstage = reset HEAD --
+	undo = reset HEAD~
+	lg = log --stat --summary --decorate --find-renames --find-copies --find-copies-harder --minimal --ignore-all-space
+	lgo = log --oneline --decorate --graph --author-date-order
+	st = status --short
+	myclean = "!sh -c 'git fsck --full --strict --no-progress && echo Cleaning && git gc --quiet --aggressive --prune=all && git repack -qad && git fsck --full --strict --no-progress && echo Done; git status; git stash list; git clean -dxn'"
+	forceclean = "!sh -c 'echo Cleaning ; git gc --quiet --aggressive --prune=all ; git repack -qad ; git fsck --full --strict --no-progress ; echo Done'"
+	desample = "!sh -c 'find . -path \"*/.git/hooks/*.sample\" -delete -print'"
+	mysync = "!git_mysync.py"
+	# run the equivalent of "forceclean" on all of the git-mysync repos
+	allclean = "!bash -c 'for REPO in $(cat ~/.git-mysync); do pushd ${REPO/#\\~/$HOME} >/dev/null; pwd; git gc --quiet --aggressive --prune=all; git repack -qad; git fsck --full --strict --no-progress; popd >/dev/null; done'"
+[pull]
+	ff = only
+	rebase = false
+[diff]
+	submodule = log
+[status]
+	submoduleSummary = 1
+[init]
+	defaultBranch = main
+[core]
+	editor = vim
+# Windows:
+#w	autocrlf = input
+#w	fscache = true
+#w	symlinks = false
+#w	fileMode = false
+# Managing +x permission on Windows:
+# git ls-files --stage
+# git update-index --chmod=+x <filenames>
+[diff "astextplain"]
+	textconv = astextplain
+[filter "lfs"]
+	clean = git-lfs clean -- %f
+	smudge = git-lfs smudge -- %f
+	process = git-lfs filter-process
+	required = true
+[http]
+# Windows:
+#w	sslBackend = schannel
+[credential]
+	# see my Git-Credentials.md for how to set this up for machines with a GUI,
+	# plus alternate instructions for machines without a GUI
+# Windows:
+#w	helper = manager
+[credential "https://dev.azure.com"]
+	useHttpPath = true

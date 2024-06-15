@@ -1,0 +1,27 @@
+
+severity = 3
+
+[ErrorHandling::RequireCarping]
+# perlcritic -3 --theme module+core *.pm
+add_themes = module
+severity = 2
+
+[Modules::ProhibitExcessMainComplexity]
+add_themes = module
+severity = 2
+
+[RegularExpressions::RequireExtendedFormatting]
+severity = 2
+
+[ControlStructures::ProhibitCascadingIfElse]
+severity = 2
+
+#[TestingAndDebugging::RequireTestLabels]
+#severity = 2
+
+#[ValuesAndExpressions::ProhibitConstantPragma]
+#severity = 2
+
+[Variables::ProhibitReusedNames]
+severity = 5
+

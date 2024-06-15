@@ -1,0 +1,4 @@
+# ~/.config/git/ignore
+.*.swp
+.~*#
+.swp

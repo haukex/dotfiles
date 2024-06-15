@@ -1,0 +1,26 @@
+
+shell /bin/bash
+autodetach on
+defscrollback 10000
+startup_message off
+
+defnonblock on
+mousetrack on
+defmousetrack on
+
+hardstatus on
+hardstatus alwayslastline
+hardstatus string '%{= kW} %{G}%H%{-}  %-Lw%{u bW}%n*%f %t%{-}%+Lw%<'
+
+caption splitonly
+caption string '%{= Kw}  %?%F%{ub KB}%?%n%?%F*%?%f %t%?%F%{-}%?%? [%h]%?'
+
+termcapinfo  * '' 'hs:ts=\E_:fs=\E\\:ds=\E_\E\\'
+termcapinfo xterm* ti@:te@
+
+# Notes on split windows:
+# Ctrl-A S  - split horiz
+# Ctrl-A |  - split vert
+# Ctrl-A X  - close this split
+# Ctrl-A : "resize X%" - resize
+
