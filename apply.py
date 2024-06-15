@@ -154,7 +154,7 @@ def proc_files(files :Iterable[FileEntry], *, opts :UserOpts):
         diff = list(unified_diff(
             list(fe.diff_filt(srclns)),
             list(fe.diff_filt(dstlns)),
-            fromfile='skel/'+fe.src, tofile='local/'+dstn, lineterm=''))
+            fromfile='dotfiles/'+fe.src, tofile='local/'+dstn, lineterm=''))
         if diff:  # there are differences even with filters applied
             if opts.quiet:
                 print(f"\r{Fore.BLACK}{Back.YELLOW}# {srcp} => {dstp} {Style.RESET_ALL}")
@@ -167,7 +167,7 @@ def proc_files(files :Iterable[FileEntry], *, opts :UserOpts):
             if opts.diff_nofilt:
                 if not opts.quiet: print(f"Files differ, but not significantly - diff without filters:")
                 print_diff(unified_diff(srclns, dstlns,
-                    fromfile='skel/'+fe.src, tofile='local/'+dstn, lineterm=''))
+                    fromfile='dotfiles/'+fe.src, tofile='local/'+dstn, lineterm=''))
         if opts.ask_clobber:
             if input('Clobber destination file? [yN] ').lower().startswith('y'):
                 link_or_copy(srcp, dstp, copy_filt=fe.copy_filt, are_identical=False, opts=opts)
