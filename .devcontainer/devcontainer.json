@@ -1,0 +1,31 @@
+// https://aka.ms/devcontainer.json
+{
+    // https://github.com/devcontainers/templates/tree/main/src/ubuntu
+    "name": "Ubuntu 24.04",
+    "image": "mcr.microsoft.com/devcontainers/base:noble"
+
+    // https://containers.dev/features
+    "features": {
+        "ghcr.io/guiyomh/features/vim:0": {},
+    },
+
+    "postCreateCommand": ".devcontainer/initialize.sh",
+
+    "customizations": {
+        "vscode": {
+            "settings": {
+                "workbench.startupEditor": "none",
+                "terminal.integrated.defaultProfile.linux": "bash (login)",
+                "terminal.integrated.profiles.linux": {
+                    // this is needed so .profile gets executed, adding ~/bin to PATH
+                    "bash (login)": {
+                        "icon": "terminal-bash",
+                        "path": "bash",
+                        "args": ["-l"],
+                    },
+                },
+            },
+        },
+    },
+}
+/* vim: set filetype=javascript ts=4 sw=4 expandtab : */

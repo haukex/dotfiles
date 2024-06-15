@@ -15,6 +15,8 @@ mkdir -vp ~/.config/git ~/bin  # quick fix since apply.py doesn't do this yet
 # Otherwise you're free to re-run apply.py without the option to create hard links.
 "$PYTHON3BIN" apply.py --copy
 
+chmod -c 755 ~/bin/git_mysync.py  # workaround for apply.py not doing this yet
+
 # Set up __git_ps1 and git bash completion
 for WHAT in git-prompt.sh git-completion.bash; do
 	test -e ~/".$WHAT" || curl -LsSfo ~/".$WHAT" "https://raw.githubusercontent.com/git/git/master/contrib/completion/$WHAT"

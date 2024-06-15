@@ -83,7 +83,7 @@ thefiles = (  # Windows / Cygwin
     FileEntry(src='.screenrc'),
     #TODO: create directories
     FileEntry(src='config_git_ignore', dst='~/.config/git/ignore'),
-    FileEntry(src='git_mysync.py', dst='~/bin/git_mysync.py'),
+    FileEntry(src='git_mysync.py', dst='~/bin/git_mysync.py'),  #TODO: set exec bit
 )
 
 class UserOpts(NamedTuple):
