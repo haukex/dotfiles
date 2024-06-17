@@ -9,17 +9,9 @@ Hauke's Notes on `.bashrc` and `.profile`
 
 * For `root`'s `PS1`, change `[01;32m\]` (green) to `[01;31m\]` (red)
 
-* Add directories to `PATH` via
+* Example of adding directories to `PATH`:
 
         test -d /path/to/bin && PATH="/path/to/bin${PATH:+:${PATH}}"
-
-* On Windows, see
-  <https://docs.github.com/en/authentication/connecting-to-github-with-ssh/working-with-ssh-key-passphrases#auto-launching-ssh-agent-on-git-for-windows>
-  (the snippet can be copied into `~/.profile`, but note that you may have to put the
-  key's filename(s) into the `ssh-add` commandlines)
-  * Also, add the line `SETX SSH_AUTH_SOCK "$SSH_AUTH_SOCK" >/dev/null` in order to export
-    the environment variable so that other Windows programs like e.g. VSCode will pick it up.
-  * Untested alternative: <https://github.com/haukex/toolshed/blob/df2321a/notes/JavaScript.md?plain=1#L51>
 
 Umask
 -----

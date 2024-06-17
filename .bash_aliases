@@ -1,6 +1,4 @@
 
-# On Windows Git Bash, if there's no ~/.bashrc, this file can be used as a ~/.bashrc
-
 # I used to set the following by editing ~/.bashrc, but with this here, I no longer need to do that.
 # See /usr/lib/git-core/git-sh-prompt
 GIT_PS1_SHOWDIRTYSTATE=1
