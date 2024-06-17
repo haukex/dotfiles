@@ -78,7 +78,7 @@ thefiles = (  # Common files
     FileEntry(src='.bash_aliases'),
     FileEntry(src='.vimrc'),
     FileEntry(src='git_mysync.py', dst='~/bin/git_mysync.py'),  #TODO: set exec bit on Linux
-) + (  # Windows / Cygwin
+) + ((  # Windows / Cygwin
     FileEntry(src='win_git_bash.profile', dst='.profile', diff_filt=win_profile_difffile),
     FileEntry(src='win.bashrc', dst='.bashrc'),
     FileEntry(src='.gitconfig', dst='~/AppData/Local/Programs/Git/etc/gitconfig',
@@ -90,7 +90,7 @@ thefiles = (  # Common files
     FileEntry(src='.screenrc'),
     #TODO: create directories (the following and ~/bin)
     FileEntry(src='config_git_ignore', dst='~/.config/git/ignore'),
-)
+))
 
 class UserOpts(NamedTuple):
     quiet :bool
