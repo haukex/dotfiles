@@ -16,8 +16,8 @@
 	lg = log --stat --summary --decorate --find-renames --find-copies --find-copies-harder --minimal --ignore-all-space
 	lgo = log --oneline --decorate --graph --author-date-order
 	st = status --short
-	myclean = "!sh -c 'git fsck --full --strict --no-progress && echo Cleaning && git gc --quiet --aggressive --prune=all && git repack -qad && git fsck --full --strict --no-progress && echo Done; git status; git stash list; git clean -dxn'"
-	forceclean = "!sh -c 'echo Cleaning ; git gc --quiet --aggressive --prune=all ; git repack -qad ; git fsck --full --strict --no-progress ; echo Done'"
+	myclean = "!sh -c 'git fsck --full --strict --no-progress && echo Cleaning && git gc --aggressive --prune=all --quiet && git repack -daq && git fsck --full --strict --no-progress && echo Done; git status; git stash list; git clean -dxn'"
+	forceclean = "!sh -c 'echo Cleaning ; git gc --aggressive --prune=all --quiet ; git repack -daq ; git fsck --full --strict --no-progress ; echo Done'"
 	desample = "!sh -c 'find . -path \"*/.git/hooks/*.sample\" -delete -print'"
 	mysync = "!git_mysync.py"
 	# run the equivalent of "forceclean" on all of the git-mysync repos
