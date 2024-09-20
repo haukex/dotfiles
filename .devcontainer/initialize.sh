@@ -5,5 +5,6 @@ set -euxo pipefail
 
 ln -svfn /workspaces ~/code
 
-sudo apt install -y cpanminus liblocal-lib-perl
+sudo apt update
+sudo apt install -y cpanminus liblocal-lib-perl vim
 grep -q -- '-Mlocal::lib' ~/.bashrc || echo "eval \"\$(perl -I\$HOME/perl5/lib/perl5 -Mlocal::lib)\"" >>~/.bashrc

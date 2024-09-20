@@ -8,5 +8,5 @@ fi
 TARGHOST="$1"
 cd "$( dirname "${BASH_SOURCE[0]}" )"
 set -x
-scp .bash_aliases .gitconfig .vimrc .screenrc \
+scp .bash_aliases .vimrc .gitconfig .screenrc \
     "$TARGHOST":

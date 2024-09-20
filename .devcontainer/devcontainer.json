@@ -6,7 +6,6 @@
 
     // https://containers.dev/features
     "features": {
-        "ghcr.io/guiyomh/features/vim:0": {},
     },
 
     "postCreateCommand": ".devcontainer/initialize.sh",
@@ -21,11 +20,11 @@
                     "bash (login)": {
                         "icon": "terminal-bash",
                         "path": "bash",
-                        "args": ["-l"],
-                    },
-                },
-            },
-        },
-    },
+                        "args": ["-l"]
+                    }
+                }
+            }
+        }
+    }
 }
 /* vim: set filetype=javascript ts=4 sw=4 expandtab : */
