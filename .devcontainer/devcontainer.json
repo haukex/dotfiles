@@ -6,6 +6,7 @@
 
     // https://containers.dev/features
     "features": {
+        "ghcr.io/haukex/devcontainer-features/perl:1": {}
     },
 
     "postCreateCommand": ".devcontainer/initialize.sh",
