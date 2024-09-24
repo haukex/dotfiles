@@ -15,6 +15,13 @@ PROMPT_COMMAND='__git_ps1 "${debian_chroot:+($debian_chroot)}\[\033[01;32m\]\u@\
 #PROMPT_COMMAND='__git_ps1 "${debian_chroot:+($debian_chroot)}\u@\h:\w" "\\\$ " "[%s]"'
 #PS1='${debian_chroot:+($debian_chroot)}\u@\h:\w\$ '
 
+# a simple replacement of this tool from the "tofrodos" package
+function fromdos {
+    PERLIO=':raw' perl -wMstrict -0777 -i -pe 's/\x0D\x0A?/\x0A/g and warn $ARGV."\n"' -- "$@"
+    # the above operates on raw bytes; to use UTF-8 instead:
+    #perl -wMstrict -CSD -0777 -i -pe 's/\x0D\x0A?/\x0A/g and warn $ARGV."\n"' -- "$@"
+}
+
 # be paranoid
 #alias cp='cp -ip'
 #alias mv='mv -i'
