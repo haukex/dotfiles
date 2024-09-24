@@ -58,3 +58,5 @@
 #w	helper = manager
 [credential "https://dev.azure.com"]
 	useHttpPath = true
+#w[ssh]
+#w	variant = putty
