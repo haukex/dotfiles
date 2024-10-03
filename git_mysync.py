@@ -26,7 +26,7 @@ import argparse
 import subprocess
 from pathlib import Path
 from warnings import warn
-from igbpyutils.error import init_handlers
+from igbpyutils.error import init_handlers  # type: ignore[import-untyped]
 from colorama import just_fix_windows_console, Fore, Style
 
 DEFAULT_CONF_FILE = '~/.git-mysync'

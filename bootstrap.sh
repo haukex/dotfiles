@@ -17,11 +17,11 @@ trap 'fallback' ERR
 
 PYTHON3BIN="${PYTHON3BIN:-python3}"  # user can override this
 # make sure we've got a recent version before continuing:
-"$PYTHON3BIN" -c 'import sys; print(sys.version); sys.exit(0 if sys.version_info>=(3,11) else 1)'
+"$PYTHON3BIN" -c 'import sys; print(sys.version); sys.exit(0 if sys.version_info>=(3,9) else 1)'
 
 mkdir -vp ~/.config/git ~/bin  # quick fix since apply.py doesn't do this yet
 
-"$PYTHON3BIN" -m pip install colorama igbpyutils
+"$PYTHON3BIN" -m pip install 'colorama>=0.4.6' 'igbpyutils>=0.6.0'
 
 # Since this is intended to run in e.g. GitHub Codespaces,
 # use --copy because hard links won't work across FS boundaries.

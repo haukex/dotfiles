@@ -26,9 +26,9 @@ from pathlib import Path
 from difflib import unified_diff
 from typing import Optional, NamedTuple
 from collections.abc import Callable, Sequence, Generator, Iterable
-from igbpyutils.file import replace_link, replacer, NamedTempFileDeleteLater  # type: ignore [import-untyped]
+from igbpyutils.file import replace_link, replacer, NamedTempFileDeleteLater  # type: ignore[import-untyped]
 from colorama import Fore, Back, Style
-assert sys.version_info >= (3,11)
+assert sys.version_info >= (3,9)
 
 ISWIN = sys.platform.startswith('win32') or sys.platform.startswith('cygwin')
 
