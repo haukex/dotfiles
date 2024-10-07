@@ -120,6 +120,7 @@ def link_or_copy(src :Path, dst :Path, *, copy_filt :FilterType, opts :UserOpts,
         if not opts.dryrun: replace_link(src, dst)  # "link pointing to src named dst"
 
 def print_diff(diff :Iterable[str]):
+    #TODO Later: Could sync with https://github.com/haukex/my-py-template/blob/main/apply.py
     for line in diff:
         if line.startswith('+') and not line.startswith('+++'):
             print(Fore.GREEN, end='')
