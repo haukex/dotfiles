@@ -11,6 +11,6 @@ test:
 .PHONY: installdeps
 installdeps:
 	@set -euxo pipefail
-	python3 -m pip install --upgrade --upgrade-strategy=eager pip wheel
-	python3 -m pip install 'colorama>=0.4.6' 'igbpyutils>=0.6.0'
-	python3 -m pip install mypy types-colorama
+	python -m pip install --upgrade --upgrade-strategy=eager pip wheel
+	python -m pip install 'colorama>=0.4.6' 'igbpyutils>=0.6.0'
+	python -m pip install mypy types-colorama

@@ -15,7 +15,7 @@ function fallback {
 }
 trap 'fallback' ERR
 
-PYTHON3BIN="${PYTHON3BIN:-python3}"  # user can override this
+PYTHON3BIN="${PYTHON3BIN:-python}"  # user can override this
 # make sure we've got a recent version before continuing:
 "$PYTHON3BIN" -c 'import sys; print(sys.version); sys.exit(0 if sys.version_info>=(3,9) else 1)'
 

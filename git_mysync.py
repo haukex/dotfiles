@@ -1,4 +1,4 @@
-#!/usr/bin/env python3
+#!/usr/bin/env python
 """This script checks a set of git repositories for synchronization with the server.
 
 Author, Copyright, and License

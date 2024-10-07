@@ -1,4 +1,4 @@
-#!/usr/bin/env python3
+#!/usr/bin/env python
 """Script to install Hauke's .dotfiles.
 
 Author, Copyright, and License
@@ -70,6 +70,7 @@ def nullfilt(lines :Iterable[str]) -> Generator[str, None, None]:
 class FileEntry(NamedTuple):
     src :str
     dst :Optional[str] = None
+    #TODO Later: perhaps a "clobber_ok" flag? (e.g. git_mysync.py)
     # NOTE "copy filter" is a bit of a misnomer, it's a filter that's *always* applied to the source...
     copy_filt :FilterType = nullfilt
     diff_filt :FilterType = nullfilt
