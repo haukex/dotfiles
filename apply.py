@@ -85,6 +85,7 @@ thefiles = (  # Common files
     FileEntry(src='.gitconfig', dst='~/AppData/Local/Programs/Git/etc/gitconfig',
               copy_filt=gitconf_copyfilt, diff_filt=gitconf_difffilt),
 ) if ISWIN else (  # assume Linux
+    #TODO: in DevPod, .gitconfig is already "\n[credential]\n        helper = ...\n" - can we merge that in?
     FileEntry(src='.gitconfig', copy_filt=nullfilt, diff_filt=gitconf_difffilt),
     FileEntry(src='.perlcriticrc'),
     FileEntry(src='.perltidyrc'),
