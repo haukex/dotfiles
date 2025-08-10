@@ -17,6 +17,9 @@ If you have a desktop environment:
 	sudo chmod 755 git-credential-libsecret
 	git config --global credential.helper /usr/share/doc/git/contrib/credential/libsecret/git-credential-libsecret
 
+Note in a small desktop environment (e.g. RPi) you may need `sudo apt install seahorse`
+for the GUI tool "Passwords and Keys".
+
 In WSL (<https://github.com/git-ecosystem/git-credential-manager/blob/release/docs/wsl.md>):
 
 	git config --global credential.helper /mnt/c/Users/<USERNAME>/AppData/Local/Programs/Git/mingw64/bin/git-credential-manager.exe
