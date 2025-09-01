@@ -5,7 +5,7 @@ cd "$( dirname "${BASH_SOURCE[0]}" )"
 # Set up __git_ps1 and git bash completion
 for WHAT in git-prompt.sh git-completion.bash; do
 	test -e ~/".$WHAT" || curl -LsSfo ~/".$WHAT" "https://raw.githubusercontent.com/git/git/master/contrib/completion/$WHAT"
-	grep -q "\.$WHAT" ~/.bashrc || echo "source ~/.$WHAT" >>~/.bashrc
+	grep -q "^source \~/\.$WHAT\$" ~/.bashrc || echo "source ~/.$WHAT" >>~/.bashrc
 done
 
 function fallback {
@@ -21,7 +21,9 @@ PYTHON3BIN="${PYTHON3BIN:-python}"  # user can override this
 
 mkdir -vp ~/.config/git ~/bin  # quick fix since apply.py doesn't do this yet
 
-"$PYTHON3BIN" -m pip install 'colorama>=0.4.6' 'igbpyutils>=0.6.0'
+# My understanding is that this usage of --break-system-packages should be ok in combination with --user,
+# since the latter means we're installing in ~/.local, and these packages shouldn't significantly shadow system ones:
+"$PYTHON3BIN" -m pip install --user --break-system-packages 'colorama>=0.4.6' 'igbpyutils>=0.6.0'
 
 # Since this is intended to run in e.g. GitHub Codespaces,
 # use --copy because hard links won't work across FS boundaries.
