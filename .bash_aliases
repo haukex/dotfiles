@@ -22,6 +22,12 @@ function fromdos {
     #perl -wMstrict -CSD -0777 -i -pe 's/\x0D\x0A?/\x0A/g and warn $ARGV."\n"' -- "$@"
 }
 
+# find files with identical content
+function dupefind {
+	find . \( -type d \( -name '.venv*' -o -name node_modules -o -name __pycache__ -o -name '.*cache' -o -name .git \) -prune \) \
+		-o \( ! -type d ! -empty -exec md5sum -b '{}' + \) | sort | uniq -w32 --all-repeated=separate
+}
+
 # be paranoid
 #alias cp='cp -ip'
 #alias mv='mv -i'
