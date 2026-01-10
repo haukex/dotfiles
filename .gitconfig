@@ -1,7 +1,6 @@
-# On Windows:
-# $HOME/AppData/Local/Programs/Git/etc/gitconfig
-# NOTE: if we want to push to a non-bare repo, in the target repo do:
-#   git config receive.denyCurrentBranch updateInstead
+# On Windows, this file is $HOME/AppData/Local/Programs/Git/etc/gitconfig
+# See also https://github.com/haukex/toolshed/blob/main/notes/Git.md
+# Lines beginning with `#w` are uncommented on Windows by `apply.py`
 [user]
 	name = Hauke D
 	email = haukex@zero-g.net
@@ -20,7 +19,7 @@
 	forceclean = "!sh -c 'echo Cleaning ; git gc --aggressive --prune=all --quiet ; git repack -daq ; git fsck --full --strict --no-progress ; echo Done'"
 	desample = "!sh -c 'find . -path \"*/.git/hooks/*.sample\" -delete -print'"
 	mysync = "!git_mysync.py"
-	# run the equivalent of "forceclean" on all of the git-mysync repos
+	# run the equivalent of "forceclean" on all of the git-mysync repos:
 	allclean = "!bash -c 'for REPO in $(cat ~/.git-mysync); do pushd ${REPO/#\\~/$HOME} >/dev/null; pwd; git gc --quiet --aggressive --prune=all; git repack -qad; git fsck --full --strict --no-progress; popd >/dev/null; done'"
 [pull]
 	ff = only
@@ -38,9 +37,6 @@
 #w	fscache = true
 #w	symlinks = false
 #w	fileMode = false
-# Managing +x permission on Windows:
-# git ls-files --stage
-# git update-index --chmod=+x <filenames>
 [diff "astextplain"]
 	textconv = astextplain
 [filter "lfs"]
@@ -52,8 +48,6 @@
 # Windows:
 #w	sslBackend = schannel
 [credential]
-	# see my Git-Credentials.md for how to set this up for machines with a GUI,
-	# plus alternate instructions for machines without a GUI
 # Windows:
 #w	helper = manager
 [credential "https://dev.azure.com"]
