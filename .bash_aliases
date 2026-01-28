@@ -47,7 +47,7 @@ alias :w='echo "this is not vi"'
 alias :q='echo "this is not vi"'
 alias :wq='echo "this is not vi"'
 
-alias prl='perl -wMstrict -MData::Dump'
+alias prl='perl -wM5.014 -MData::Dump'
 
 alias grep="grep --color=auto --exclude-dir=.git --exclude-dir=__pycache__ --exclude-dir=.ipynb_checkpoints --exclude-dir='.venv*' --exclude-dir='.*cache' --exclude-dir=node_modules --exclude='.*.swp'"
 
