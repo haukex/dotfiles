@@ -17,7 +17,7 @@
 	st = status --short
 	myclean = "!sh -c 'git fsck --full --strict --no-progress && echo Cleaning && git gc --aggressive --prune=all --quiet && git repack -daq && git fsck --full --strict --no-progress && echo Done; git status; git stash list; git clean -dxn'"
 	forceclean = "!sh -c 'echo Cleaning ; git gc --aggressive --prune=all --quiet ; git repack -daq ; git fsck --full --strict --no-progress ; echo Done'"
-	desample = "!sh -c 'find . -path \"*/.git/hooks/*.sample\" -delete -print'"
+	desample = "!sh -c 'find . \\( -path \"*/.git/hooks/*.sample\" -o -path \"*/.git/modules/*/hooks/*.sample\" \\) -delete -print'"
 	mysync = "!git_mysync.py"
 	# run the equivalent of "forceclean" on all of the git-mysync repos:
 	allclean = "!bash -c 'for REPO in $(cat ~/.git-mysync); do pushd ${REPO/#\\~/$HOME} >/dev/null; pwd; git gc --quiet --aggressive --prune=all; git repack -qad; git fsck --full --strict --no-progress; popd >/dev/null; done'"
