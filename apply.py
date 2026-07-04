@@ -81,6 +81,7 @@ thefiles = (  # Common files
     FileEntry(src='git_mysync.py', dst='~/bin/git_mysync.py'),  #TODO: set exec bit on Linux
 ) + ((  # Windows / Cygwin
     FileEntry(src='win_git_bash.profile', dst='.profile', diff_filt=win_profile_difffile),
+    FileEntry(src='win.bash_profile', dst='.bash_profile'),
     FileEntry(src='win.bashrc', dst='.bashrc'),
     FileEntry(src='.gitconfig', dst='~/AppData/Local/Programs/Git/etc/gitconfig',
               copy_filt=gitconf_copyfilt, diff_filt=gitconf_difffilt),
